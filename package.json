@@ -1,0 +1,27 @@
+{
+  "name": "webmcp-polyfill",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./sdk": "./src/sdk/host.ts",
+    "./sdk/browser": "./src/sdk/browser-host.ts"
+  },
+  "scripts": {
+    "mcp": "bun run src/server.ts",
+    "demo": "bun run demo/tool-host.ts",
+    "web": "cd demo/web && bunx vite",
+    "smoke": "bun run scripts/smoke-agent.ts",
+    "typecheck": "tsc --noEmit",
+    "gen-cert": "bash scripts/gen-cert.sh"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1",
+    "ws": "^8"
+  },
+  "devDependencies": {
+    "@types/ws": "^8",
+    "typescript": "^5",
+    "bun-types": "latest"
+  }
+}
