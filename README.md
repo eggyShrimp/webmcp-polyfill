@@ -97,31 +97,6 @@ host.tool("add", {
 host.listen();
 ```
 
-## Project Structure
-
-```
-src/
-├── index.ts              Public API barrel export
-├── server.ts             MCP relay server (stdio + WebSocket)
-├── core/
-│   ├── types.ts          TypeScript type definitions
-│   ├── logger.ts         Configurable logger
-│   ├── tool-registry.ts  Tool registration and invocation
-│   ├── resource-registry.ts  Resource registration and reading
-│   ├── prompt-registry.ts    Prompt registration and retrieval
-│   └── wss-server.ts     WebSocket secure/plain server
-└── sdk/
-    ├── host.ts           Server-side MCPHost (Bun/Node)
-    └── browser-host.ts   Browser-side MCPHost (zero Node deps)
-demo/
-├── tool-host.ts          Server-side demo (counter + todo)
-└── web/                  Browser demo (Vite + counter + todo)
-scripts/
-├── gen-cert.sh           Generate self-signed TLS certs
-├── smoke-test.ts         Raw WebSocket client smoke test
-└── smoke-agent.ts        End-to-end integration test
-```
-
 ## License
 
 MIT
